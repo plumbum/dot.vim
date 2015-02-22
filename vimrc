@@ -18,7 +18,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-Plugin 'mattn/emmet-vim'            " http://mattn.github.io/emmet-vim/ 
+Plugin 'mattn/emmet-vim'            " http://mattn.github.io/emmet-vim/
 Plugin 'scrooloose/syntastic'       " https://github.com/scrooloose/syntastic
 Plugin 'fugitive.vim'               " https://github.com/tpope/vim-fugitive
 Plugin 'L9'
@@ -40,11 +40,27 @@ Plugin 'PHPcollection'
 
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'junegunn/vim-easy-align'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'Shougo/unite.vim'
+Plugin 'bronson/vim-trailing-whitespace'
 
 Plugin 'lua_omni'
 " Plugin 'itchyny/vim-cursorword'
 " Plugin 'Valloric/YouCompleteMe'
 " Plugin 'SkidanovAlex/CtrlK'
+"
+
+" Haskell
+Plugin 'yogsototh/haskell-vim'            " syntax indentation / highlight
+" Plugin 'enomsg/vim-haskellConcealPlus'    " unicode for haskell operators
+Plugin 'eagletmt/ghcmod-vim'
+Plugin 'eagletmt/neco-ghc'
+Plugin 'Twinside/vim-hoogle'
+Plugin 'pbrisbin/html-template-syntax'    " Yesod templates
+
+" Plugin 'syntaxhaskell.vim'
+" Plugin 'indenthaskell.vim'
 
 
 " All of your Plugins must be added before the following line
@@ -63,13 +79,17 @@ if has("gui_running")
     "set guifont=Dejavu\ Sans\ Mono\ 10
     "set guifont=Inconsolata\ LGC\ 10
     set guifont=Liberation\ Mono\ 10
-    
 else
     set background=dark
     colorscheme oceandeep
 "	colorscheme koehler
 endif
 
+
+if (exists('+colorcolumn'))
+    set colorcolumn=120
+    highlight ColorColumn ctermbg=9
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Generic/interface settings
@@ -146,6 +166,35 @@ set foldlevelstart=1
 "set guioptions-=T
 
 """"""""""""""""""""""
+
+" -------------------
+"       Haskell
+" -------------------
+let mapleader="-"
+let g:mapleader="-"
+set tm=2000
+nmap <silent> <leader>ht :GhcModType<CR>
+nmap <silent> <leader>hh :GhcModTypeClear<CR>
+nmap <silent> <leader>hT :GhcModTypeInsert<CR>
+nmap <silent> <leader>hc :SyntasticCheck ghc_mod<CR>:lopen<CR>
+let g:syntastic_mode_map={'mode': 'active', 'passive_filetypes': ['haskell']}
+let g:syntastic_always_populate_loc_list = 1
+nmap <silent> <leader>hl :SyntasticCheck hlint<CR>:lopen<CR>
+
+" Auto-checking on writing
+autocmd BufWritePost *.hs,*.lhs GhcModCheckAndLintAsync
+
+"  neocomplcache (advanced completion)
+autocmd BufEnter *.hs,*.lhs let g:neocomplcache_enable_at_startup = 1
+function! SetToCabalBuild()
+    if glob("*.cabal") != ''
+        set makeprg=cabal\ build
+    endif
+endfunction
+autocmd BufEnter *.hs,*.lhs :call SetToCabalBuild()
+
+" -- neco-ghc
+let $PATH=$PATH.':'.expand("~/.cabal/bin")
 
 
 """"""""""""""""""""""""""""""""""""""""""""""
