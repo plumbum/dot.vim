@@ -30,12 +30,15 @@ imap <Home> <Esc>I
 nmap <F1> :set go-=m<CR>:set go-=T<CR>
 nmap <S-F1> :set go+=m<CR>:set go+=T<CR>
 
-nmap <silent> <F3> :TlistToggle<CR>
-imap <silent> <F3> <Esc>:TlistToggle<CR>
+" nmap <silent> <F3> :TlistToggle<CR>
+" imap <silent> <F3> <Esc>:TlistToggle<CR>
+nmap <silent> <F3> :TagbarToggle<CR>
+imap <silent> <F3> <Esc>:TagbarToggle<CR>
 
 nmap <silent> <C-F3> :NERDTreeToggle<CR>
 imap <silent> <C-F3> <Esc>:NERDTreeToggle<CR>
 
+" Jump between *.h *.c* (use fswitch)
 nmap <silent> <F4> :FSHere<CR>
 imap <silent> <F4> <Esc>:FSHere<CR>
 

@@ -26,7 +26,8 @@ Plugin 'FuzzyFinder'
 Plugin 'lokaltog/vim-easymotion'    " https://github.com/Lokaltog/vim-easymotion
 Plugin 'surround.vim'
 Plugin 'repeat.vim'
-Plugin 'taglist-plus'
+" Plugin 'taglist-plus'
+Plugin 'Tagbar'
 Plugin 'The-NERD-tree'
 Plugin 'The-NERD-Commenter'
 Plugin 'OmniCppComplete'
@@ -143,9 +144,18 @@ set foldlevelstart=1
 
 """"""""""""""""""""""
 
+""""""""""""""""""""""""""""""""""""""""""""""
+" Tagbar
+""""""""""""""""""""""""""""""""""""""""""""""
+let g:tagbar_left = 1       " Показывать окно слева
+let g:tagbar_width = 30     " Ширина окна
+let g:tagbar_iconchars = ['▶', '◢']     " Показывать стрелки вместо +/-
+let g:tagbar_sort = 0       " Не сортировать
+
 
 """"""""""""""""""""""""""""""""""""""""""""""
 " Encodings
+""""""""""""""""""""""""""""""""""""""""""""""
 "set encoding=utf-8
 "set fileencoding=utf-8
 "set termencoding=cp1251
