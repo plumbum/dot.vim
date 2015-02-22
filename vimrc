@@ -38,6 +38,9 @@ Plugin 'shawncplus/php.vim'
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'PHPcollection'
 
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+
 Plugin 'lua_omni'
 " Plugin 'itchyny/vim-cursorword'
 " Plugin 'Valloric/YouCompleteMe'
@@ -143,6 +146,18 @@ set foldlevelstart=1
 "set guioptions-=T
 
 """"""""""""""""""""""
+
+
+""""""""""""""""""""""""""""""""""""""""""""""
+" UltiSnips
+"
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 
 """"""""""""""""""""""""""""""""""""""""""""""
 " Tagbar
