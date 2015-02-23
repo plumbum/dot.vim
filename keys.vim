@@ -22,6 +22,9 @@ nmap <C-CR> :e<Space><C-R><C-A><CR>
 " автодополнение по Control+Space
 imap <C-Space> <C-N>
 
+" Поиск и замена слова под курсором
+nmap ; :%s/\<<c-r>=expand("<cword>")<cr>\>/
+
 " 'умный' Home
 nmap <Home> ^
 imap <Home> <Esc>I
