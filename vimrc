@@ -33,6 +33,8 @@ Plugin 'The-NERD-Commenter'
 Plugin 'OmniCppComplete'
 Plugin 'FSwitch'
 
+Plugin  'terryma/vim-multiple-cursors'
+
 " Plugin 'php.vim'
 Plugin 'shawncplus/php.vim'
 Plugin 'shawncplus/phpcomplete.vim'
