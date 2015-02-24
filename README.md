@@ -7,8 +7,11 @@ Usage
 
   * git clone https://github.com/plumbum/dot.vim.git ~/.vim
   * ln -s ~/.vim/vimrc ~/.vimrc
+  * cd ~/.vim/bundle
+  * rm -rf Vundle.vim
+  * git clone https://github.com/gmarik/Vundle.vim.git
   * Run vim
-  * Install vundles :VundleInstall
+  * Install bundles :VundleInstall
 
 
 tips
