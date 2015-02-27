@@ -47,7 +47,12 @@ Plugin 'Shougo/vimproc.vim'
 Plugin 'Shougo/unite.vim'
 Plugin 'bronson/vim-trailing-whitespace'
 
+Plugin 'xolox/vim-lua-inspect'
+Plugin 'xolox/vim-lua-ftplugin'
 Plugin 'lua_omni'
+Plugin 'xolox/vim-misc'
+
+Plugin 'tkztmk/vim-vala'
 " Plugin 'itchyny/vim-cursorword'
 " Plugin 'Valloric/YouCompleteMe'
 " Plugin 'SkidanovAlex/CtrlK'
