@@ -35,10 +35,12 @@ Plugin 'FSwitch'
 
 Plugin  'terryma/vim-multiple-cursors'
 
+Plugin 'vim-scripts/squirrel.vim'
+
 " Plugin 'php.vim'
-Plugin 'shawncplus/php.vim'
-Plugin 'shawncplus/phpcomplete.vim'
-Plugin 'PHPcollection'
+" Plugin 'shawncplus/php.vim'
+" Plugin 'shawncplus/phpcomplete.vim'
+" Plugin 'PHPcollection'
 
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -46,6 +48,8 @@ Plugin 'junegunn/vim-easy-align'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'Shougo/unite.vim'
 Plugin 'bronson/vim-trailing-whitespace'
+
+Bundle 'm2mdas/phpcomplete-extended'
 
 Plugin 'xolox/vim-lua-inspect'
 Plugin 'xolox/vim-lua-ftplugin'
@@ -56,7 +60,10 @@ Plugin 'tkztmk/vim-vala'
 " Plugin 'itchyny/vim-cursorword'
 " Plugin 'Valloric/YouCompleteMe'
 " Plugin 'SkidanovAlex/CtrlK'
-"
+
+Plugin 'pangloss/vim-javascript'
+Plugin 'jelera/vim-javascript-syntax'
+
 
 " Haskell
 Plugin 'yogsototh/haskell-vim'            " syntax indentation / highlight
@@ -313,5 +320,5 @@ let g:syntastic_check_on_wq = 0
 
 source ~/.vim/keys.vim
 
-
+au BufNewFile,BufRead *.nut setf squirrel
 
