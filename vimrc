@@ -46,21 +46,19 @@ Plugin 'Shougo/unite.vim'
 Plugin 'bronson/vim-trailing-whitespace'
 
 Plugin 'lua_omni'
-" Plugin 'itchyny/vim-cursorword'
+
 " Plugin 'Valloric/YouCompleteMe'
 " Plugin 'SkidanovAlex/CtrlK'
+" Plugin 'itchyny/vim-cursorword'
 "
 
 " Haskell
 Plugin 'yogsototh/haskell-vim'            " syntax indentation / highlight
-" Plugin 'enomsg/vim-haskellConcealPlus'    " unicode for haskell operators
 Plugin 'eagletmt/ghcmod-vim'
 Plugin 'eagletmt/neco-ghc'
 Plugin 'Twinside/vim-hoogle'
 Plugin 'pbrisbin/html-template-syntax'    " Yesod templates
-
-" Plugin 'syntaxhaskell.vim'
-" Plugin 'indenthaskell.vim'
+" Plugin 'enomsg/vim-haskellConcealPlus'    " unicode for haskell operators
 
 
 " All of your Plugins must be added before the following line
