@@ -152,3 +152,8 @@ nmap <F11> :cn<CR>
 imap <S-F11> <Esc>:cp<CR>i
 nmap <S-F11> :cp<CR>
 
+
+" Ctags gen
+imap <C-F12> <Esc>:!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>a
+nmap <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+

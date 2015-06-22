@@ -33,10 +33,15 @@ Plugin 'The-NERD-Commenter'
 Plugin 'OmniCppComplete'
 Plugin 'FSwitch'
 
+Plugin  'terryma/vim-multiple-cursors'
+
+Plugin 'vim-scripts/squirrel.vim'
+
 " Plugin 'php.vim'
-Plugin 'shawncplus/php.vim'
-Plugin 'shawncplus/phpcomplete.vim'
-Plugin 'PHPcollection'
+" Plugin 'shawncplus/php.vim'
+" Plugin 'shawncplus/phpcomplete.vim'
+" Bundle 'm2mdas/phpcomplete-extended'
+" Plugin 'PHPcollection'
 
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -45,12 +50,22 @@ Plugin 'Shougo/vimproc.vim'
 Plugin 'Shougo/unite.vim'
 Plugin 'bronson/vim-trailing-whitespace'
 
-Plugin 'lua_omni'
+" Plugin 'vim-scripts/groovy.vim'
+" Plugin 'tfnico/vim-gradle'
+" Plugin 'derekwyatt/vim-scala'
 
+Plugin 'xolox/vim-lua-inspect'
+Plugin 'xolox/vim-lua-ftplugin'
+Plugin 'lua_omni'
+Plugin 'xolox/vim-misc'
+
+" Plugin 'tkztmk/vim-vala'
+" Plugin 'itchyny/vim-cursorword'
 " Plugin 'Valloric/YouCompleteMe'
 " Plugin 'SkidanovAlex/CtrlK'
-" Plugin 'itchyny/vim-cursorword'
-"
+
+Plugin 'pangloss/vim-javascript'
+Plugin 'jelera/vim-javascript-syntax'
 
 " Haskell
 Plugin 'yogsototh/haskell-vim'            " syntax indentation / highlight
@@ -60,6 +75,7 @@ Plugin 'Twinside/vim-hoogle'
 Plugin 'pbrisbin/html-template-syntax'    " Yesod templates
 " Plugin 'enomsg/vim-haskellConcealPlus'    " unicode for haskell operators
 
+Bundle 'zah/nimrod.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -304,5 +320,18 @@ let g:syntastic_check_on_wq = 0
 
 source ~/.vim/keys.vim
 
+au BufNewFile,BufRead *.nut setf squirrel
 
+""" Nim language
+fun! JumpToDef()
+  if exists("*GotoDefinition_" . &filetype)
+    call GotoDefinition_{&filetype}()
+  else
+    exe "norm! \<C-]>"
+  endif
+endf
+
+" Jump to tag
+nn <M-g> :call JumpToDef()<cr>
+ino <M-g> <esc>:call JumpToDef()<cr>i
 
