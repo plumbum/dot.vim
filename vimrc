@@ -76,6 +76,7 @@ Plugin 'pbrisbin/html-template-syntax'    " Yesod templates
 " Plugin 'syntaxhaskell.vim'
 " Plugin 'indenthaskell.vim'
 
+Bundle 'zah/nimrod.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -321,4 +322,17 @@ let g:syntastic_check_on_wq = 0
 source ~/.vim/keys.vim
 
 au BufNewFile,BufRead *.nut setf squirrel
+
+""" Nim language
+fun! JumpToDef()
+  if exists("*GotoDefinition_" . &filetype)
+    call GotoDefinition_{&filetype}()
+  else
+    exe "norm! \<C-]>"
+  endif
+endf
+
+" Jump to tag
+nn <M-g> :call JumpToDef()<cr>
+ino <M-g> <esc>:call JumpToDef()<cr>i
 
