@@ -26,48 +26,41 @@ Plugin 'FuzzyFinder'
 Plugin 'lokaltog/vim-easymotion'    " https://github.com/Lokaltog/vim-easymotion
 Plugin 'surround.vim'
 Plugin 'repeat.vim'
-" Plugin 'taglist-plus'
 Plugin 'Tagbar'
 Plugin 'The-NERD-tree'
 Plugin 'The-NERD-Commenter'
 Plugin 'OmniCppComplete'
 Plugin 'FSwitch'
-
-Plugin  'terryma/vim-multiple-cursors'
-
-Plugin 'vim-scripts/squirrel.vim'
-
-" Plugin 'php.vim'
-" Plugin 'shawncplus/php.vim'
-" Plugin 'shawncplus/phpcomplete.vim'
-" Bundle 'm2mdas/phpcomplete-extended'
-" Plugin 'PHPcollection'
-
+Plugin 'terryma/vim-multiple-cursors'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'Shougo/unite.vim'
 Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'xolox/vim-misc'
 
-" Plugin 'vim-scripts/groovy.vim'
-" Plugin 'tfnico/vim-gradle'
-" Plugin 'derekwyatt/vim-scala'
 
+
+""" Programming language supports
+
+Plugin 'fatih/vim-go'
+
+""" Kotlin
+Plugin 'udalov/kotlin-vim'
+""" Nim (http://nim-lang.org/)
+Plugin 'zah/nimrod.vim'
+
+""" LUA
 Plugin 'xolox/vim-lua-inspect'
 Plugin 'xolox/vim-lua-ftplugin'
 Plugin 'lua_omni'
-Plugin 'xolox/vim-misc'
 
-" Plugin 'tkztmk/vim-vala'
-" Plugin 'itchyny/vim-cursorword'
-" Plugin 'Valloric/YouCompleteMe'
-" Plugin 'SkidanovAlex/CtrlK'
-
+""" JavaScript
 Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
 
-" Haskell
+""" Haskell
 Plugin 'yogsototh/haskell-vim'            " syntax indentation / highlight
 Plugin 'eagletmt/ghcmod-vim'
 Plugin 'eagletmt/neco-ghc'
@@ -75,7 +68,26 @@ Plugin 'Twinside/vim-hoogle'
 Plugin 'pbrisbin/html-template-syntax'    " Yesod templates
 " Plugin 'enomsg/vim-haskellConcealPlus'    " unicode for haskell operators
 
-Bundle 'zah/nimrod.vim'
+
+""" NOT USE NOW!!!
+" Plugin 'vim-scripts/squirrel.vim'
+" Plugin 'php.vim'
+" Plugin 'shawncplus/php.vim'
+" Plugin 'shawncplus/phpcomplete.vim'
+" Bundle 'm2mdas/phpcomplete-extended'
+" Plugin 'PHPcollection'
+" Plugin 'vim-scripts/groovy.vim'
+" Plugin 'tfnico/vim-gradle'
+" Plugin 'derekwyatt/vim-scala'
+" Plugin 'tkztmk/vim-vala'
+" Plugin 'itchyny/vim-cursorword'
+" Plugin 'Valloric/YouCompleteMe'
+" Plugin 'SkidanovAlex/CtrlK'
+" Plugin 'syntaxhaskell.vim'
+" Plugin 'indenthaskell.vim'
+" Plugin 'taglist-plus'
+
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
