@@ -1,0 +1,1 @@
+../bundle/lua_omni/ftplugin/lua_omni.lua
