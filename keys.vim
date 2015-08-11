@@ -5,8 +5,8 @@
 " C-c and C-v - Copy/Paste в "глобальный клипборд"
 vmap <C-C> "+yi
 " Вставка из обычного буфера
-" imap <C-S-V> <esc>"+gPi
-" nmap <C-S-V> "+gP
+imap <C-S-V> <esc>"+gPi
+nmap <C-S-V> "+gP
 " Вставка из мышиного буфера
 imap <C-M-V> <esc>"*gPi
 nmap <C-M-V> "*gP
@@ -20,7 +20,9 @@ imap <C-CR> <Esc>:e<Space><C-R><C-A><CR>
 nmap <C-CR> :e<Space><C-R><C-A><CR>
 
 " автодополнение по Control+Space
-imap <C-Space> <C-N>
+" imap <C-Space> <C-N>
+" OMNY
+imap <C-Space> <C-X><C-O>
 
 " Поиск и замена слова под курсором
 nmap ; :%s/\<<c-r>=expand("<cword>")<cr>\>/
@@ -30,11 +32,8 @@ nmap <Home> ^
 imap <Home> <Esc>I
 
 " Меню/тулбар (для gvim)
-nmap <F1> :set go-=m<CR>:set go-=T<CR>
-nmap <S-F1> :set go+=m<CR>:set go+=T<CR>
+nmap <silent> <M-F11> :if &go=~#'m'<Bar>:set go-=m<CR>:set go-=T<CR><Bar>else<Bar>:set go+=m<CR>:set go+=T<CR><Bar>endif<CR><CR>
 
-" nmap <silent> <F3> :TlistToggle<CR>
-" imap <silent> <F3> <Esc>:TlistToggle<CR>
 nmap <silent> <F3> :TagbarToggle<CR>
 imap <silent> <F3> <Esc>:TagbarToggle<CR>
 
@@ -81,8 +80,8 @@ imap <M-[> <Esc>:set<Space>keymap=<CR>a
 nmap <M-[> :set<Space>keymap=<CR>
 
 
-"Движение в режиме вставки
-"Прокрутка в лево (<Alt+h>)
+" Движение в режиме вставки
+" Прокрутка влево (<Alt+h>)
 imap <silent> <M-h> <C-O>h
 nmap <silent> <M-h> h
 "Прокрутка в право (<Alt+l>)
@@ -129,6 +128,7 @@ nmap <M-Left> :tabprev<CR>
 imap <M-Right> <Esc>:tabnext<CR>a
 nmap <M-Right> :tabnext<CR>
 
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Building
 "
@@ -156,4 +156,5 @@ nmap <S-F11> :cp<CR>
 " Ctags gen
 imap <C-F12> <Esc>:!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>a
 nmap <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
 

@@ -18,6 +18,9 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
+
+Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
+
 Plugin 'mattn/emmet-vim'            " http://mattn.github.io/emmet-vim/
 Plugin 'scrooloose/syntastic'       " https://github.com/scrooloose/syntastic
 Plugin 'fugitive.vim'               " https://github.com/tpope/vim-fugitive
@@ -26,7 +29,6 @@ Plugin 'FuzzyFinder'
 Plugin 'lokaltog/vim-easymotion'    " https://github.com/Lokaltog/vim-easymotion
 Plugin 'surround.vim'
 Plugin 'repeat.vim'
-Plugin 'Tagbar'
 Plugin 'The-NERD-tree'
 Plugin 'The-NERD-Commenter'
 Plugin 'OmniCppComplete'
@@ -39,7 +41,8 @@ Plugin 'Shougo/vimproc.vim'
 Plugin 'Shougo/unite.vim'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'xolox/vim-misc'
-
+" Plugin 'Tagbar'
+Plugin 'majutsushi/tagbar'
 
 
 """ Programming language supports
@@ -98,17 +101,18 @@ filetype plugin indent on    " required
 " Color scheme
 "
 if has("gui_running")
-"    colorscheme koehler
-    colorscheme oceandeep
     set background=dark
+    colorscheme codeschool
+    set guifont=Liberation\ Mono\ 10
+    " colorscheme oceandeep
+    "    colorscheme koehler
     "set guifont=terminus\ 12
     "set guifont=Dejavu\ Sans\ Mono\ 10
     "set guifont=Inconsolata\ LGC\ 10
-    set guifont=Liberation\ Mono\ 10
 else
     set background=dark
     colorscheme oceandeep
-"	colorscheme koehler
+    "	colorscheme koehler
 endif
 
 
@@ -184,7 +188,7 @@ set laststatus=2 " always show the status line
 set foldenable
 set foldcolumn=2
 set foldmethod=syntax
-set foldlevelstart=1
+set foldlevelstart=2
 
 " set tb=""
 
@@ -192,35 +196,6 @@ set foldlevelstart=1
 "set guioptions-=T
 
 """"""""""""""""""""""
-
-" -------------------
-"       Haskell
-" -------------------
-let mapleader="-"
-let g:mapleader="-"
-set tm=2000
-nmap <silent> <leader>ht :GhcModType<CR>
-nmap <silent> <leader>hh :GhcModTypeClear<CR>
-nmap <silent> <leader>hT :GhcModTypeInsert<CR>
-nmap <silent> <leader>hc :SyntasticCheck ghc_mod<CR>:lopen<CR>
-let g:syntastic_mode_map={'mode': 'active', 'passive_filetypes': ['haskell']}
-let g:syntastic_always_populate_loc_list = 1
-nmap <silent> <leader>hl :SyntasticCheck hlint<CR>:lopen<CR>
-
-" Auto-checking on writing
-autocmd BufWritePost *.hs,*.lhs GhcModCheckAndLintAsync
-
-"  neocomplcache (advanced completion)
-autocmd BufEnter *.hs,*.lhs let g:neocomplcache_enable_at_startup = 1
-function! SetToCabalBuild()
-    if glob("*.cabal") != ''
-        set makeprg=cabal\ build
-    endif
-endfunction
-autocmd BufEnter *.hs,*.lhs :call SetToCabalBuild()
-
-" -- neco-ghc
-let $PATH=$PATH.':'.expand("~/.cabal/bin")
 
 
 """"""""""""""""""""""""""""""""""""""""""""""
@@ -234,35 +209,15 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
+
 """"""""""""""""""""""""""""""""""""""""""""""
 " Tagbar
 """"""""""""""""""""""""""""""""""""""""""""""
-let g:tagbar_left = 1       " Показывать окно слева
+let g:tagbar_left = 0       " Показывать окно слева
 let g:tagbar_width = 30     " Ширина окна
 let g:tagbar_iconchars = ['▶', '◢']     " Показывать стрелки вместо +/-
 let g:tagbar_sort = 0       " Не сортировать
 
-
-""""""""""""""""""""""""""""""""""""""""""""""
-" Encodings
-""""""""""""""""""""""""""""""""""""""""""""""
-"set encoding=utf-8
-"set fileencoding=utf-8
-"set termencoding=cp1251
-"
-" Autodetect
-set fencs=utf-8,cp1251,koi8-r,ucs-2,cp866
-
-"Wagner's encoding menu
-set wildmenu
-set wcm=<Tab>
-menu Encoding.windows-1251 :e ++enc=cp1251<CR>
-menu Encoding.ibm-866      :e ++enc=ibm866<CR>
-menu Encoding.koi8-r       :e ++enc=koi8-r<CR>
-menu Encoding.utf-8        :e ++enc=utf-8<CR>
-menu Encoding.unicode      :e ++enc=ucs-2<CR>
-"map <F8> :emenu Encoding.<TAB>
-""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " C.VIM configuration
 "
@@ -282,42 +237,6 @@ let OmniCpp_MayCompleteDot = 1
 let OmniCpp_MayCompleteScope = 1
 
 
-" Scons use  make
-"let current_compiler = "scons"
-
-"set errorformat=%*[^"]"%f"%*\D%l: %m,"%f"%*\D%l: %m,%-G%f:%l: (Each undeclared identifier is reported only once,%-G%f:%l: for each function it appears in.),%f:%l:%m,"%f"\, line %l%*\D%c%*[^ ] %m,%D%*\a[%*\d]: Entering directory `%f',%X%*\a[%*\d]: Leaving directory `%f',%DMaking %*\a in %f  
-
-"set makeprg=scons\ -u\ \.
-
-
-
-" ***Dokuwiki section*********************
-" looks for DokuWiki headlines in the first 20 lines
-" of the current buffer
-fun IsDokuWiki()
-  if match(getline(1,20),'^ \=\(=\{2,6}\)[^=]\+\1 *$') >= 0
-    set textwidth=0
-    set wrap
-    set linebreak
-    set filetype=dokuwiki
-  endif
-endfun
-
-" check for dokuwiki syntax
-autocmd BufWinEnter *.txt call IsDokuWiki()
-" ************************
-
-
-" autocmd BufNewFile,BufRead *.lzx set filetype=lzx
-" autocmd Filetype cpp,c,java,cs set omnifunc=cppcomplete#CompleteMain
-" autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-" autocmd FileType py set omnifunc=pythoncomplete#CompleteTags
-" let pythonhighlightall=1
-" 
-" augroup mkd
-"     autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:>
-" augroup END
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntastic
@@ -330,20 +249,10 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+
 source ~/.vim/keys.vim
-
-au BufNewFile,BufRead *.nut setf squirrel
-
-""" Nim language
-fun! JumpToDef()
-  if exists("*GotoDefinition_" . &filetype)
-    call GotoDefinition_{&filetype}()
-  else
-    exe "norm! \<C-]>"
-  endif
-endf
-
-" Jump to tag
-nn <M-g> :call JumpToDef()<cr>
-ino <M-g> <esc>:call JumpToDef()<cr>i
+source ~/.vim/rc.haskell.vim
+source ~/.vim/rc.go.vim
+source ~/.vim/rc.dokuwiki.vim
+source ~/.vim/rc.encodings.vim
 
