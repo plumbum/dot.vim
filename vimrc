@@ -19,8 +19,6 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
-
 Plugin 'mattn/emmet-vim'            " http://mattn.github.io/emmet-vim/
 Plugin 'scrooloose/syntastic'       " https://github.com/scrooloose/syntastic
 Plugin 'fugitive.vim'               " https://github.com/tpope/vim-fugitive
