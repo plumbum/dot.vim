@@ -37,8 +37,8 @@ nmap <silent> <M-F11> :if &go=~#'m'<Bar>:set go-=m<CR>:set go-=T<CR><Bar>else<Ba
 nmap <silent> <F3> :TagbarToggle<CR>
 imap <silent> <F3> <Esc>:TagbarToggle<CR>
 
-nmap <silent> <C-F3> :NERDTreeToggle<CR>
-imap <silent> <C-F3> <Esc>:NERDTreeToggle<CR>
+nmap <silent> <S-F3> :NERDTreeToggle<CR>
+imap <silent> <S-F3> <Esc>:NERDTreeToggle<CR>
 
 " Jump between *.h *.c* (use fswitch)
 nmap <silent> <F4> :FSHere<CR>
