@@ -5,12 +5,11 @@
 " C-c and C-v - Copy/Paste в "глобальный клипборд"
 vmap <C-C> "+yi
 " Вставка из обычного буфера
-imap <C-S-V> <esc>"+gPi
+imap <C-S-V> <esc>"+gpa
 nmap <C-S-V> "+gP
 " Вставка из мышиного буфера
-imap <C-M-V> <esc>"*gPi
+imap <C-M-V> <esc>"*gpa
 nmap <C-M-V> "*gP
-
 
 " Toggle folds
 nmap <space> za
