@@ -39,13 +39,13 @@ Plugin 'Shougo/vimproc.vim'
 Plugin 'Shougo/unite.vim'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'xolox/vim-misc'
-" Plugin 'Tagbar'
-Plugin 'majutsushi/tagbar'
+Plugin 'Tagbar'
 
 
 """ Programming language supports
 
 Plugin 'fatih/vim-go'
+Plugin 'Shougo/neocomplete.vim'
 
 """ Kotlin
 Plugin 'udalov/kotlin-vim'
@@ -100,17 +100,18 @@ filetype plugin indent on    " required
 "
 if has("gui_running")
     set background=dark
-    colorscheme codeschool
-    set guifont=Liberation\ Mono\ 10
-    " colorscheme oceandeep
-    "    colorscheme koehler
-    "set guifont=terminus\ 12
-    "set guifont=Dejavu\ Sans\ Mono\ 10
-    "set guifont=Inconsolata\ LGC\ 10
+    set guifont=Droid\ Sans\ Mono\ 8
+    colorscheme oceandeep
+    " colorscheme codeschool
+    " set guifont=Liberation\ Mono\ 10
+    " colorscheme koehler
+    " set guifont=terminus\ 12
+    " set guifont=Dejavu\ Sans\ Mono\ 10
+    " set guifont=Inconsolata\ LGC\ 10
 else
     set background=dark
     colorscheme oceandeep
-    "	colorscheme koehler
+    " colorscheme koehler
 endif
 
 
@@ -191,7 +192,10 @@ set foldlevelstart=2
 " set tb=""
 
 " Скрыть панель в gui версии ибо она не нужна
-"set guioptions-=T
+set guioptions-=m  "remove menu bar
+set guioptions-=T  "remove toolbar
+set guioptions-=r  "remove right-hand scroll bar
+set guioptions-=L  "remove left-hand scroll bar
 
 """"""""""""""""""""""
 
@@ -247,6 +251,11 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" neocomplete
+"
+let g:neocomplete#enable_at_startup = 1
 
 source ~/.vim/keys.vim
 source ~/.vim/rc.haskell.vim
