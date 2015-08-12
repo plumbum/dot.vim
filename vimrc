@@ -5,8 +5,15 @@ set exrc          " Искать .vimrc в текущей директории
 set secure        " Ограничения на .vimrc в директории
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" NeoComplete enable
+let g:neocomplete#enable_at_startup = 1
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vundle
 "
+
 
 filetype off                  " required for Vundle
 
@@ -29,7 +36,6 @@ Plugin 'surround.vim'
 Plugin 'repeat.vim'
 Plugin 'The-NERD-tree'
 Plugin 'The-NERD-Commenter'
-Plugin 'OmniCppComplete'
 Plugin 'FSwitch'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'SirVer/ultisnips'
@@ -40,15 +46,18 @@ Plugin 'Shougo/unite.vim'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'xolox/vim-misc'
 Plugin 'Tagbar'
+Plugin 'Shougo/neocomplete.vim'
 
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Programming language supports
 
 Plugin 'fatih/vim-go'
-Plugin 'Shougo/neocomplete.vim'
+Plugin 'garyburd/go-explorer'
 
 """ Kotlin
 Plugin 'udalov/kotlin-vim'
+
 """ Nim (http://nim-lang.org/)
 Plugin 'zah/nimrod.vim'
 
@@ -69,6 +78,7 @@ Plugin 'Twinside/vim-hoogle'
 Plugin 'pbrisbin/html-template-syntax'    " Yesod templates
 " Plugin 'enomsg/vim-haskellConcealPlus'    " unicode for haskell operators
 
+" Plugin 'OmniCppComplete'
 
 """ NOT USE NOW!!!
 " Plugin 'vim-scripts/squirrel.vim'
@@ -100,18 +110,19 @@ filetype plugin indent on    " required
 "
 if has("gui_running")
     set background=dark
-    set guifont=Droid\ Sans\ Mono\ 8
     colorscheme oceandeep
+    set guifont=Droid\ Sans\ Mono\ 9
     " colorscheme codeschool
-    " set guifont=Liberation\ Mono\ 10
     " colorscheme koehler
-    " set guifont=terminus\ 12
+    " colorscheme oceandeep
     " set guifont=Dejavu\ Sans\ Mono\ 10
+    " set guifont=Droid\ Sans\ Mono\ 9
     " set guifont=Inconsolata\ LGC\ 10
+    " set guifont=Liberation\ Mono\ 10
+    " set guifont=terminus\ 12
 else
     set background=dark
     colorscheme oceandeep
-    " colorscheme koehler
 endif
 
 
@@ -252,11 +263,9 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" neocomplete
-"
-let g:neocomplete#enable_at_startup = 1
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 source ~/.vim/keys.vim
 source ~/.vim/rc.haskell.vim
 source ~/.vim/rc.go.vim
