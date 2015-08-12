@@ -5,8 +5,13 @@ set exrc          " Искать .vimrc в текущей директории
 set secure        " Ограничения на .vimrc в директории
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" NeoComplete
+let g:neocomplete#enable_at_startup = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vundle
 "
+
 
 filetype off                  " required for Vundle
 
@@ -29,7 +34,6 @@ Plugin 'surround.vim'
 Plugin 'repeat.vim'
 Plugin 'The-NERD-tree'
 Plugin 'The-NERD-Commenter'
-Plugin 'OmniCppComplete'
 Plugin 'FSwitch'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'SirVer/ultisnips'
@@ -39,13 +43,14 @@ Plugin 'Shougo/vimproc.vim'
 Plugin 'Shougo/unite.vim'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'xolox/vim-misc'
-" Plugin 'Tagbar'
-Plugin 'majutsushi/tagbar'
+Plugin 'Tagbar'
+Plugin 'Shougo/neocomplete.vim'
 
 
 """ Programming language supports
 
 Plugin 'fatih/vim-go'
+Plugin 'garyburd/go-explorer'
 
 """ Kotlin
 Plugin 'udalov/kotlin-vim'
@@ -69,6 +74,7 @@ Plugin 'Twinside/vim-hoogle'
 Plugin 'pbrisbin/html-template-syntax'    " Yesod templates
 " Plugin 'enomsg/vim-haskellConcealPlus'    " unicode for haskell operators
 
+" Plugin 'OmniCppComplete'
 
 """ NOT USE NOW!!!
 " Plugin 'vim-scripts/squirrel.vim'
@@ -100,17 +106,19 @@ filetype plugin indent on    " required
 "
 if has("gui_running")
     set background=dark
-    colorscheme codeschool
-    set guifont=Liberation\ Mono\ 10
+    colorscheme oceandeep
+    set guifont=Droid\ Sans\ Mono\ 9
+    " colorscheme codeschool
     " colorscheme oceandeep
-    "    colorscheme koehler
-    "set guifont=terminus\ 12
-    "set guifont=Dejavu\ Sans\ Mono\ 10
-    "set guifont=Inconsolata\ LGC\ 10
+    " colorscheme koehler
+    " set guifont=Liberation\ Mono\ 10
+    " set guifont=Droid\ Sans\ Mono\ 9
+    " set guifont=Dejavu\ Sans\ Mono\ 10
+    " set guifont=Inconsolata\ LGC\ 10
+    " set guifont=terminus\ 12
 else
     set background=dark
     colorscheme oceandeep
-    "	colorscheme koehler
 endif
 
 
@@ -191,7 +199,11 @@ set foldlevelstart=2
 " set tb=""
 
 " Скрыть панель в gui версии ибо она не нужна
-"set guioptions-=T
+set guioptions-=T
+set guioptions-=m
+set guioptions-=L
+set guioptions-=r
+
 
 """"""""""""""""""""""
 
@@ -248,6 +260,9 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 source ~/.vim/keys.vim
 source ~/.vim/rc.haskell.vim
 source ~/.vim/rc.go.vim

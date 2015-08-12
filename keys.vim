@@ -2,11 +2,12 @@
 " Key bindings
 "
 
-" C-c and C-v - Copy/Paste в "глобальный клипборд"
+" C-c and C-S-v - Copy/Paste в "глобальный клипборд"
 vmap <C-C> "+yi
 " Вставка из обычного буфера
-imap <C-S-V> <esc>"+gpa
-nmap <C-S-V> "+gP
+" TODO почему-то заменяет C-v, до разбора отключено
+" imap <C-S-V> <esc>"+gpa
+" nmap <C-S-V> "+gP
 " Вставка из мышиного буфера
 imap <C-M-V> <esc>"*gpa
 nmap <C-M-V> "*gP
