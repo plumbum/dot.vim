@@ -111,7 +111,7 @@ filetype plugin indent on    " required
 if has("gui_running")
     set background=dark
     colorscheme oceandeep
-    set guifont=Droid\ Sans\ Mono\ 9
+    set guifont=Droid\ Sans\ Mono\ 10
     " colorscheme codeschool
     " colorscheme koehler
     " colorscheme oceandeep
