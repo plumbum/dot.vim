@@ -122,7 +122,12 @@ if has("gui_running")
     " set guifont=terminus\ 12
 else
     set background=dark
-    colorscheme oceandeep
+    " colorscheme oceandeep
+    set t_Co=256
+    let g:solarized_termcolors=256
+    colorscheme lucius
+    " colorscheme molokai
+    " colorscheme seoul256
 endif
 
 
@@ -239,7 +244,7 @@ let g:C_AuthorRef       = 'http://tuxotronic.org'
 let g:C_Email           = 'i@tuxotronic.org'
 let g:C_Company         = 'Freelancer'
 
-" OmniCppComplete 
+" OmniCppComplete
 " filetype plugin on
 " filetype indent on
 
