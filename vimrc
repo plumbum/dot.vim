@@ -47,6 +47,7 @@ Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'xolox/vim-misc'
 Plugin 'Tagbar'
 Plugin 'Shougo/neocomplete.vim'
+Plugin 'JamshedVesuna/vim-markdown-preview'
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -110,7 +111,10 @@ filetype plugin indent on    " required
 "
 if has("gui_running")
     set background=dark
-    colorscheme oceandeep
+    set t_Co=256
+    let g:solarized_termcolors=256
+    colorscheme lucius
+    "colorscheme oceandeep
     set guifont=Droid\ Sans\ Mono\ 10
     " colorscheme codeschool
     " colorscheme koehler
@@ -267,6 +271,8 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+
+let vim_markdown_preview_github=1
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
