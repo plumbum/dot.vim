@@ -57,26 +57,26 @@ Plugin 'fatih/vim-go'
 Plugin 'garyburd/go-explorer'
 
 """ Kotlin
-Plugin 'udalov/kotlin-vim'
+" Plugin 'udalov/kotlin-vim'
 
 """ Nim (http://nim-lang.org/)
 Plugin 'zah/nimrod.vim'
 
 """ LUA
-Plugin 'xolox/vim-lua-inspect'
-Plugin 'xolox/vim-lua-ftplugin'
-Plugin 'lua_omni'
+" Plugin 'xolox/vim-lua-inspect'
+" Plugin 'xolox/vim-lua-ftplugin'
+" Plugin 'lua_omni'
 
 """ JavaScript
 Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
 
 """ Haskell
-Plugin 'yogsototh/haskell-vim'            " syntax indentation / highlight
-Plugin 'eagletmt/ghcmod-vim'
-Plugin 'eagletmt/neco-ghc'
-Plugin 'Twinside/vim-hoogle'
-Plugin 'pbrisbin/html-template-syntax'    " Yesod templates
+" Plugin 'yogsototh/haskell-vim'            " syntax indentation / highlight
+" Plugin 'eagletmt/ghcmod-vim'
+" Plugin 'eagletmt/neco-ghc'
+" Plugin 'Twinside/vim-hoogle'
+" Plugin 'pbrisbin/html-template-syntax'    " Yesod templates
 " Plugin 'enomsg/vim-haskellConcealPlus'    " unicode for haskell operators
 
 " Plugin 'OmniCppComplete'
