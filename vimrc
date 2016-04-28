@@ -114,16 +114,15 @@ if has("gui_running")
     set t_Co=256
     let g:solarized_termcolors=256
     colorscheme lucius
-    "colorscheme oceandeep
-    set guifont=Droid\ Sans\ Mono\ 10
-    " colorscheme codeschool
-    " colorscheme koehler
-    " colorscheme oceandeep
+    set guifont=Liberation\ Mono\ 10
+    " set guifont=Droid\ Sans\ Mono\ 10
     " set guifont=Dejavu\ Sans\ Mono\ 10
     " set guifont=Droid\ Sans\ Mono\ 9
     " set guifont=Inconsolata\ LGC\ 10
-    " set guifont=Liberation\ Mono\ 10
     " set guifont=terminus\ 12
+    " colorscheme codeschool
+    " colorscheme koehler
+    " colorscheme oceandeep
 else
     set background=dark
     " colorscheme oceandeep
