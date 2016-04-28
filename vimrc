@@ -47,36 +47,39 @@ Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'xolox/vim-misc'
 Plugin 'Tagbar'
 Plugin 'Shougo/neocomplete.vim'
+Plugin 'Konfekt/FastFold'
 Plugin 'JamshedVesuna/vim-markdown-preview'
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Programming language supports
 
+Plugin 'elzr/vim-json'
+
 Plugin 'fatih/vim-go'
 Plugin 'garyburd/go-explorer'
 
 """ Kotlin
-Plugin 'udalov/kotlin-vim'
+" Plugin 'udalov/kotlin-vim'
 
 """ Nim (http://nim-lang.org/)
 Plugin 'zah/nimrod.vim'
 
 """ LUA
-Plugin 'xolox/vim-lua-inspect'
-Plugin 'xolox/vim-lua-ftplugin'
-Plugin 'lua_omni'
+" Plugin 'xolox/vim-lua-inspect'
+" Plugin 'xolox/vim-lua-ftplugin'
+" Plugin 'lua_omni'
 
 """ JavaScript
 Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
 
 """ Haskell
-Plugin 'yogsototh/haskell-vim'            " syntax indentation / highlight
-Plugin 'eagletmt/ghcmod-vim'
-Plugin 'eagletmt/neco-ghc'
-Plugin 'Twinside/vim-hoogle'
-Plugin 'pbrisbin/html-template-syntax'    " Yesod templates
+" Plugin 'yogsototh/haskell-vim'            " syntax indentation / highlight
+" Plugin 'eagletmt/ghcmod-vim'
+" Plugin 'eagletmt/neco-ghc'
+" Plugin 'Twinside/vim-hoogle'
+" Plugin 'pbrisbin/html-template-syntax'    " Yesod templates
 " Plugin 'enomsg/vim-haskellConcealPlus'    " unicode for haskell operators
 
 " Plugin 'OmniCppComplete'
@@ -282,3 +285,17 @@ source ~/.vim/rc.go.vim
 source ~/.vim/rc.dokuwiki.vim
 source ~/.vim/rc.encodings.vim
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Nim
+fun! JumpToDef()
+    if exists("*GotoDefinition_" . &filetype)
+        call GotoDefinition_{&filetype}()
+    else
+        exe "norm! \<C-]>"
+    endif
+endf
+
+" Jump to tag
+nn <M-g> :call JumpToDef()<cr>
+ino <M-g> <esc>:call JumpToDef()<cr>i
