@@ -47,11 +47,14 @@ Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'xolox/vim-misc'
 Plugin 'Tagbar'
 Plugin 'Shougo/neocomplete.vim'
+Plugin 'Konfekt/FastFold'
 Plugin 'JamshedVesuna/vim-markdown-preview'
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Programming language supports
+
+Plugin 'elzr/vim-json'
 
 Plugin 'fatih/vim-go'
 Plugin 'garyburd/go-explorer'
@@ -283,3 +286,17 @@ source ~/.vim/rc.go.vim
 source ~/.vim/rc.dokuwiki.vim
 source ~/.vim/rc.encodings.vim
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Nim
+fun! JumpToDef()
+    if exists("*GotoDefinition_" . &filetype)
+        call GotoDefinition_{&filetype}()
+    else
+        exe "norm! \<C-]>"
+    endif
+endf
+
+" Jump to tag
+nn <M-g> :call JumpToDef()<cr>
+ino <M-g> <esc>:call JumpToDef()<cr>i
