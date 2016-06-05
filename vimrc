@@ -47,6 +47,7 @@ Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'xolox/vim-misc'
 Plugin 'Tagbar'
 Plugin 'Shougo/neocomplete.vim'
+Plugin 'Konfekt/FastFold'
 Plugin 'JamshedVesuna/vim-markdown-preview'
 
 
@@ -64,13 +65,15 @@ Plugin 'garyburd/go-explorer'
 Plugin 'zah/nimrod.vim'
 
 """ LUA
-Plugin 'xolox/vim-lua-inspect'
-Plugin 'xolox/vim-lua-ftplugin'
-Plugin 'lua_omni'
+" Plugin 'xolox/vim-lua-inspect'
+" Plugin 'xolox/vim-lua-ftplugin'
+" Plugin 'lua_omni'
 
 """ JavaScript
 Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
+""" Json
+Plugin 'elzr/vim-json'
 
 """ Haskell
 " Plugin 'yogsototh/haskell-vim'            " syntax indentation / highlight
@@ -99,7 +102,6 @@ Plugin 'jelera/vim-javascript-syntax'
 " Plugin 'syntaxhaskell.vim'
 " Plugin 'indenthaskell.vim'
 " Plugin 'taglist-plus'
-
 
 
 " All of your Plugins must be added before the following line
@@ -272,10 +274,17 @@ source ~/.vim/rc.go.vim
 source ~/.vim/rc.dokuwiki.vim
 source ~/.vim/rc.encodings.vim
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Nim
+fun! JumpToDef()
+    if exists("*GotoDefinition_" . &filetype)
+        call GotoDefinition_{&filetype}()
+    else
+        exe "norm! \<C-]>"
+    endif
+endf
 
-""" Rust
-" let g:racer_cmd = "/home/ivan/src/rust/racer/target/release/racer"
-" let $RUST_SRC_PATH="/usr/local/src/rust/src"
-
-
+" Jump to tag
+nn <M-g> :call JumpToDef()<cr>
+ino <M-g> <esc>:call JumpToDef()<cr>i
 
