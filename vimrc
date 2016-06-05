@@ -53,11 +53,12 @@ Plugin 'JamshedVesuna/vim-markdown-preview'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Programming language supports
 
+""" Go Lang
 Plugin 'fatih/vim-go'
 Plugin 'garyburd/go-explorer'
 
 """ Kotlin
-Plugin 'udalov/kotlin-vim'
+" Plugin 'udalov/kotlin-vim'
 
 """ Nim (http://nim-lang.org/)
 Plugin 'zah/nimrod.vim'
@@ -72,11 +73,11 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
 
 """ Haskell
-Plugin 'yogsototh/haskell-vim'            " syntax indentation / highlight
-Plugin 'eagletmt/ghcmod-vim'
-Plugin 'eagletmt/neco-ghc'
-Plugin 'Twinside/vim-hoogle'
-Plugin 'pbrisbin/html-template-syntax'    " Yesod templates
+" Plugin 'yogsototh/haskell-vim'            " syntax indentation / highlight
+" Plugin 'eagletmt/ghcmod-vim'
+" Plugin 'eagletmt/neco-ghc'
+" Plugin 'Twinside/vim-hoogle'
+" Plugin 'pbrisbin/html-template-syntax'    " Yesod templates
 " Plugin 'enomsg/vim-haskellConcealPlus'    " unicode for haskell operators
 
 " Plugin 'OmniCppComplete'
@@ -114,24 +115,12 @@ if has("gui_running")
     set t_Co=256
     let g:solarized_termcolors=256
     colorscheme lucius
-    "colorscheme oceandeep
     set guifont=Droid\ Sans\ Mono\ 10
-    " colorscheme codeschool
-    " colorscheme koehler
-    " colorscheme oceandeep
-    " set guifont=Dejavu\ Sans\ Mono\ 10
-    " set guifont=Droid\ Sans\ Mono\ 9
-    " set guifont=Inconsolata\ LGC\ 10
-    " set guifont=Liberation\ Mono\ 10
-    " set guifont=terminus\ 12
 else
     set background=dark
-    " colorscheme oceandeep
     set t_Co=256
     let g:solarized_termcolors=256
     colorscheme lucius
-    " colorscheme molokai
-    " colorscheme seoul256
 endif
 
 
@@ -282,4 +271,11 @@ source ~/.vim/rc.haskell.vim
 source ~/.vim/rc.go.vim
 source ~/.vim/rc.dokuwiki.vim
 source ~/.vim/rc.encodings.vim
+
+
+""" Rust
+" let g:racer_cmd = "/home/ivan/src/rust/racer/target/release/racer"
+" let $RUST_SRC_PATH="/usr/local/src/rust/src"
+
+
 
