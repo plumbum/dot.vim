@@ -74,6 +74,9 @@ Plugin 'zah/nimrod.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
 
+""" Arduino
+Plugin 'tclem/vim-arduino'
+
 """ Haskell
 " Plugin 'yogsototh/haskell-vim'            " syntax indentation / highlight
 " Plugin 'eagletmt/ghcmod-vim'
