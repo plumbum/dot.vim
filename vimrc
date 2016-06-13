@@ -65,13 +65,13 @@ Plugin 'garyburd/go-explorer'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Programming language supports
 
-
 " Plugin 'sheerun/vim-polyglot'
 
 " Plugin 'z3t0/arduvim'
 
 " Plugin 'elzr/vim-json'
 
+""" Go Lang
 " Plugin 'fatih/vim-go'
 " Plugin 'garyburd/go-explorer'
 
@@ -93,6 +93,9 @@ Plugin 'garyburd/go-explorer'
 """ Arduino
 " Plugin 'sudar/vim-arduino-syntax'
 " Plugin 'tclem/vim-arduino'
+"
+""" Json
+" Plugin 'elzr/vim-json'
 
 """ Haskell
 " Plugin 'yogsototh/haskell-vim'            " syntax indentation / highlight
@@ -123,7 +126,6 @@ Plugin 'garyburd/go-explorer'
 " Plugin 'taglist-plus'
 
 
-
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -137,24 +139,12 @@ if has("gui_running")
     set t_Co=256
     let g:solarized_termcolors=256
     colorscheme lucius
-    "colorscheme oceandeep
     set guifont=Droid\ Sans\ Mono\ 10
-    " colorscheme codeschool
-    " colorscheme koehler
-    " colorscheme oceandeep
-    " set guifont=Dejavu\ Sans\ Mono\ 10
-    " set guifont=Droid\ Sans\ Mono\ 9
-    " set guifont=Inconsolata\ LGC\ 10
-    " set guifont=Liberation\ Mono\ 10
-    " set guifont=terminus\ 12
 else
     set background=dark
-    " colorscheme oceandeep
     set t_Co=256
     let g:solarized_termcolors=256
     colorscheme lucius
-    " colorscheme molokai
-    " colorscheme seoul256
 endif
 
 
@@ -299,7 +289,6 @@ let vim_markdown_preview_github=1
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 source ~/.vim/keys.vim
 source ~/.vim/rc.haskell.vim
 source ~/.vim/rc.go.vim
@@ -326,3 +315,4 @@ endf
 " Jump to tag
 nn <M-g> :call JumpToDef()<cr>
 ino <M-g> <esc>:call JumpToDef()<cr>i
+
