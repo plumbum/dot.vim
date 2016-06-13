@@ -51,7 +51,7 @@ au FileType go nmap <F9> <Plug>(go-run)
 au FileType go nmap <C-F9> <Plug>(go-build)
 
 " Переход к определению
-" au FileType go nmap <C-B> <Plug>(go-def-tab)
+au FileType go nmap <C-B> <Plug>(go-def-tab)
 
-au FileType go nmap <C-F12> :!gotags -R /usr/local/go/src $GOPATH/src . > tags<CR>
+au FileType go nmap <C-F12> :!gotags -R . /usr/local/go/src $GOPATH/src > tags<CR>
 

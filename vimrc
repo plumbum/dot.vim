@@ -27,13 +27,16 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " YouCompleteMe
-" ./install.py --clang-completer --system-libclang --gocode-completer --tern-completer
+" ./install.py --clang-completer --gocode-completer --tern-completer
 Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Shougo/neocomplete.vim'
 
 Plugin 'scrooloose/syntastic'       " https://github.com/scrooloose/syntastic
 Plugin 'fugitive.vim'               " https://github.com/tpope/vim-fugitive
 Plugin 'mattn/emmet-vim'            " http://mattn.github.io/emmet-vim/
 Plugin 'jiangmiao/auto-pairs'
+
+Plugin 'majutsushi/tagbar'
 
 " Go lang
 Plugin 'fatih/vim-go'
@@ -292,27 +295,8 @@ let vim_markdown_preview_github=1
 source ~/.vim/keys.vim
 source ~/.vim/rc.haskell.vim
 source ~/.vim/rc.go.vim
+source ~/.vim/rc.arduino.vim
+source ~/.vim/rc.nim.vim
 source ~/.vim/rc.dokuwiki.vim
 source ~/.vim/rc.encodings.vim
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Arduino
-"Default: /Applications/Arduino.app/Contents/Resources/Java
-let g:vim_arduino_library_path = "/opt/arduino-1.6.9"
-""Default: result of `$(ls /dev/tty.* | grep usb)`
-let g:vim_arduino_serial_port = "/dev/ttyUSB0"
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Nim
-fun! JumpToDef()
-    if exists("*GotoDefinition_" . &filetype)
-        call GotoDefinition_{&filetype}()
-    else
-        exe "norm! \<C-]>"
-    endif
-endf
-
-" Jump to tag
-nn <M-g> :call JumpToDef()<cr>
-ino <M-g> <esc>:call JumpToDef()<cr>i
 
