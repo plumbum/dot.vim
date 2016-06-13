@@ -26,44 +26,60 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'mattn/emmet-vim'            " http://mattn.github.io/emmet-vim/
+" YouCompleteMe
+" ./install.py --clang-completer --system-libclang --gocode-completer --tern-completer
+Plugin 'Valloric/YouCompleteMe'
+
 Plugin 'scrooloose/syntastic'       " https://github.com/scrooloose/syntastic
 Plugin 'fugitive.vim'               " https://github.com/tpope/vim-fugitive
-Plugin 'L9'
-Plugin 'FuzzyFinder'
-Plugin 'lokaltog/vim-easymotion'    " https://github.com/Lokaltog/vim-easymotion
-Plugin 'surround.vim'
-Plugin 'repeat.vim'
-Plugin 'The-NERD-tree'
-Plugin 'The-NERD-Commenter'
-Plugin 'FSwitch'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'junegunn/vim-easy-align'
-Plugin 'Shougo/vimproc.vim'
-Plugin 'Shougo/unite.vim'
-Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'xolox/vim-misc'
-Plugin 'Tagbar'
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'Konfekt/FastFold'
-Plugin 'JamshedVesuna/vim-markdown-preview'
+Plugin 'mattn/emmet-vim'            " http://mattn.github.io/emmet-vim/
+Plugin 'jiangmiao/auto-pairs'
+
+" Go lang
+Plugin 'fatih/vim-go'
+Plugin 'garyburd/go-explorer'
+
+
+" Plugin 'L9'
+" Plugin 'FuzzyFinder'
+" Plugin 'lokaltog/vim-easymotion'    " https://github.com/Lokaltog/vim-easymotion
+" Plugin 'surround.vim'
+" Plugin 'repeat.vim'
+" Plugin 'The-NERD-tree'
+" Plugin 'The-NERD-Commenter'
+" Plugin 'FSwitch'
+" Plugin 'terryma/vim-multiple-cursors'
+" Plugin 'SirVer/ultisnips'
+" Plugin 'honza/vim-snippets'
+" Plugin 'junegunn/vim-easy-align'
+" Plugin 'Shougo/vimproc.vim'
+" Plugin 'Shougo/unite.vim'
+" Plugin 'bronson/vim-trailing-whitespace'
+" Plugin 'xolox/vim-misc'
+" Plugin 'Tagbar'
+" Plugin 'Shougo/neocomplete.vim'
+" Plugin 'Konfekt/FastFold'
+" Plugin 'JamshedVesuna/vim-markdown-preview'
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Programming language supports
 
-Plugin 'elzr/vim-json'
 
-Plugin 'fatih/vim-go'
-Plugin 'garyburd/go-explorer'
+" Plugin 'sheerun/vim-polyglot'
+
+" Plugin 'z3t0/arduvim'
+
+" Plugin 'elzr/vim-json'
+
+" Plugin 'fatih/vim-go'
+" Plugin 'garyburd/go-explorer'
 
 """ Kotlin
 " Plugin 'udalov/kotlin-vim'
 
 """ Nim (http://nim-lang.org/)
-Plugin 'zah/nimrod.vim'
+" Plugin 'zah/nimrod.vim'
 
 """ LUA
 " Plugin 'xolox/vim-lua-inspect'
@@ -71,11 +87,12 @@ Plugin 'zah/nimrod.vim'
 " Plugin 'lua_omni'
 
 """ JavaScript
-Plugin 'pangloss/vim-javascript'
-Plugin 'jelera/vim-javascript-syntax'
+" Plugin 'pangloss/vim-javascript'
+" Plugin 'jelera/vim-javascript-syntax'
 
 """ Arduino
-Plugin 'tclem/vim-arduino'
+" Plugin 'sudar/vim-arduino-syntax'
+" Plugin 'tclem/vim-arduino'
 
 """ Haskell
 " Plugin 'yogsototh/haskell-vim'            " syntax indentation / highlight
@@ -289,6 +306,12 @@ source ~/.vim/rc.go.vim
 source ~/.vim/rc.dokuwiki.vim
 source ~/.vim/rc.encodings.vim
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Arduino
+"Default: /Applications/Arduino.app/Contents/Resources/Java
+let g:vim_arduino_library_path = "/opt/arduino-1.6.9"
+""Default: result of `$(ls /dev/tty.* | grep usb)`
+let g:vim_arduino_serial_port = "/dev/ttyUSB0"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Nim

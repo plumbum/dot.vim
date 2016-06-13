@@ -2,6 +2,8 @@
 " Key bindings
 "
 
+let mapleader = ","
+
 " C-c and S-Insert - Copy/Paste в "глобальный клипборд"
 vmap <C-C> "+yi
 " Вставка из обычного буфера
@@ -158,3 +160,5 @@ imap <C-F12> <Esc>:!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>a
 nmap <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 
+" YCM goto definition
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
