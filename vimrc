@@ -23,10 +23,10 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
+""" let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-" YouCompleteMe
+""" YouCompleteMe
 " ./install.py --clang-completer --gocode-completer --tern-completer
 Plugin 'Valloric/YouCompleteMe'
 " Plugin 'Shougo/neocomplete.vim'
@@ -38,10 +38,13 @@ Plugin 'jiangmiao/auto-pairs'
 
 Plugin 'majutsushi/tagbar'
 
-" Go lang
+""" Go lang
 Plugin 'fatih/vim-go'
 Plugin 'garyburd/go-explorer'
 
+""" Arduino
+" Plugin 'sudar/vim-arduino-syntax'
+" Plugin 'tclem/vim-arduino'
 
 " Plugin 'L9'
 " Plugin 'FuzzyFinder'
@@ -93,10 +96,6 @@ Plugin 'garyburd/go-explorer'
 " Plugin 'pangloss/vim-javascript'
 " Plugin 'jelera/vim-javascript-syntax'
 
-""" Arduino
-" Plugin 'sudar/vim-arduino-syntax'
-" Plugin 'tclem/vim-arduino'
-"
 """ Json
 " Plugin 'elzr/vim-json'
 
