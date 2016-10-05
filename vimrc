@@ -9,7 +9,6 @@ set secure        " Ограничения на .vimrc в директории
 let g:neocomplete#enable_at_startup = 1
 
 
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vundle
 "
@@ -28,15 +27,19 @@ Plugin 'gmarik/Vundle.vim'
 
 " YouCompleteMe
 " ./install.py --clang-completer --gocode-completer --tern-completer
-Plugin 'Valloric/YouCompleteMe'
-" Plugin 'Shougo/neocomplete.vim'
+" Plugin 'Valloric/YouCompleteMe'
+Plugin 'Shougo/neocomplete.vim'
 
 Plugin 'scrooloose/syntastic'       " https://github.com/scrooloose/syntastic
 Plugin 'fugitive.vim'               " https://github.com/tpope/vim-fugitive
 Plugin 'mattn/emmet-vim'            " http://mattn.github.io/emmet-vim/
 Plugin 'jiangmiao/auto-pairs'
 
+Plugin 'FSwitch'
 Plugin 'majutsushi/tagbar'
+Plugin 'surround.vim'
+Plugin 'repeat.vim'
+Plugin 'Konfekt/FastFold'
 
 " Go lang
 Plugin 'fatih/vim-go'
@@ -46,11 +49,8 @@ Plugin 'garyburd/go-explorer'
 " Plugin 'L9'
 " Plugin 'FuzzyFinder'
 " Plugin 'lokaltog/vim-easymotion'    " https://github.com/Lokaltog/vim-easymotion
-" Plugin 'surround.vim'
-" Plugin 'repeat.vim'
 " Plugin 'The-NERD-tree'
 " Plugin 'The-NERD-Commenter'
-" Plugin 'FSwitch'
 " Plugin 'terryma/vim-multiple-cursors'
 " Plugin 'SirVer/ultisnips'
 " Plugin 'honza/vim-snippets'
@@ -60,8 +60,6 @@ Plugin 'garyburd/go-explorer'
 " Plugin 'bronson/vim-trailing-whitespace'
 " Plugin 'xolox/vim-misc'
 " Plugin 'Tagbar'
-" Plugin 'Shougo/neocomplete.vim'
-" Plugin 'Konfekt/FastFold'
 " Plugin 'JamshedVesuna/vim-markdown-preview'
 
 
@@ -73,10 +71,6 @@ Plugin 'garyburd/go-explorer'
 " Plugin 'z3t0/arduvim'
 
 " Plugin 'elzr/vim-json'
-
-""" Go Lang
-" Plugin 'fatih/vim-go'
-" Plugin 'garyburd/go-explorer'
 
 """ Kotlin
 " Plugin 'udalov/kotlin-vim'
@@ -107,26 +101,6 @@ Plugin 'garyburd/go-explorer'
 " Plugin 'Twinside/vim-hoogle'
 " Plugin 'pbrisbin/html-template-syntax'    " Yesod templates
 " Plugin 'enomsg/vim-haskellConcealPlus'    " unicode for haskell operators
-
-" Plugin 'OmniCppComplete'
-
-""" NOT USE NOW!!!
-" Plugin 'vim-scripts/squirrel.vim'
-" Plugin 'php.vim'
-" Plugin 'shawncplus/php.vim'
-" Plugin 'shawncplus/phpcomplete.vim'
-" Bundle 'm2mdas/phpcomplete-extended'
-" Plugin 'PHPcollection'
-" Plugin 'vim-scripts/groovy.vim'
-" Plugin 'tfnico/vim-gradle'
-" Plugin 'derekwyatt/vim-scala'
-" Plugin 'tkztmk/vim-vala'
-" Plugin 'itchyny/vim-cursorword'
-" Plugin 'Valloric/YouCompleteMe'
-" Plugin 'SkidanovAlex/CtrlK'
-" Plugin 'syntaxhaskell.vim'
-" Plugin 'indenthaskell.vim'
-" Plugin 'taglist-plus'
 
 
 " All of your Plugins must be added before the following line
