@@ -22,10 +22,10 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
+""" let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-" YouCompleteMe
+""" YouCompleteMe
 " ./install.py --clang-completer --gocode-completer --tern-completer
 " Plugin 'Valloric/YouCompleteMe'
 Plugin 'Shougo/neocomplete.vim'
@@ -41,10 +41,13 @@ Plugin 'surround.vim'
 Plugin 'repeat.vim'
 Plugin 'Konfekt/FastFold'
 
-" Go lang
+""" Go lang
 Plugin 'fatih/vim-go'
 Plugin 'garyburd/go-explorer'
 
+""" Arduino
+" Plugin 'sudar/vim-arduino-syntax'
+" Plugin 'tclem/vim-arduino'
 
 " Plugin 'L9'
 " Plugin 'FuzzyFinder'
@@ -87,10 +90,6 @@ Plugin 'garyburd/go-explorer'
 " Plugin 'pangloss/vim-javascript'
 " Plugin 'jelera/vim-javascript-syntax'
 
-""" Arduino
-" Plugin 'sudar/vim-arduino-syntax'
-" Plugin 'tclem/vim-arduino'
-"
 """ Json
 " Plugin 'elzr/vim-json'
 
@@ -116,7 +115,14 @@ if has("gui_running")
     set t_Co=256
     let g:solarized_termcolors=256
     colorscheme lucius
-    set guifont=Droid\ Sans\ Mono\ 10
+    set guifont=Liberation\ Mono\ 10
+    " set guifont=Droid\ Sans\ Mono\ 10
+    " set guifont=Dejavu\ Sans\ Mono\ 10
+    " set guifont=Inconsolata\ LGC\ 10
+    " set guifont=terminus\ 12
+    " colorscheme codeschool
+    " colorscheme koehler
+    " colorscheme oceandeep
 else
     set background=dark
     set t_Co=256
