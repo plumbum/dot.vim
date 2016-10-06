@@ -26,7 +26,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-" YouCompleteMe
+""" YouCompleteMe
 " ./install.py --clang-completer --system-libclang --gocode-completer --tern-completer
 Plugin 'Valloric/YouCompleteMe'
 
@@ -34,20 +34,24 @@ Plugin 'scrooloose/syntastic'       " https://github.com/scrooloose/syntastic
 Plugin 'fugitive.vim'               " https://github.com/tpope/vim-fugitive
 Plugin 'mattn/emmet-vim'            " http://mattn.github.io/emmet-vim/
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'surround.vim'
+Plugin 'repeat.vim'
+Plugin 'The-NERD-tree'
+Plugin 'The-NERD-Commenter'
+Plugin 'FSwitch'
 
-" Go lang
+""" Go lang
 Plugin 'fatih/vim-go'
 Plugin 'garyburd/go-explorer'
 
+""" Arduino
+Plugin 'sudar/vim-arduino-syntax'
+" Plugin 'jplaut/vim-arduino-ino'
+" Plugin 'tclem/vim-arduino'
 
 " Plugin 'L9'
 " Plugin 'FuzzyFinder'
 " Plugin 'lokaltog/vim-easymotion'    " https://github.com/Lokaltog/vim-easymotion
-" Plugin 'surround.vim'
-" Plugin 'repeat.vim'
-" Plugin 'The-NERD-tree'
-" Plugin 'The-NERD-Commenter'
-" Plugin 'FSwitch'
 " Plugin 'terryma/vim-multiple-cursors'
 " Plugin 'SirVer/ultisnips'
 " Plugin 'honza/vim-snippets'
@@ -90,9 +94,6 @@ Plugin 'garyburd/go-explorer'
 " Plugin 'pangloss/vim-javascript'
 " Plugin 'jelera/vim-javascript-syntax'
 
-""" Arduino
-" Plugin 'sudar/vim-arduino-syntax'
-" Plugin 'tclem/vim-arduino'
 "
 """ Json
 " Plugin 'elzr/vim-json'
@@ -297,10 +298,10 @@ source ~/.vim/rc.encodings.vim
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Arduino
-"Default: /Applications/Arduino.app/Contents/Resources/Java
-let g:vim_arduino_library_path = "/opt/arduino-1.6.9"
-""Default: result of `$(ls /dev/tty.* | grep usb)`
-let g:vim_arduino_serial_port = "/dev/ttyUSB0"
+" Default: /Applications/Arduino.app/Contents/Resources/Java
+" let g:vim_arduino_library_path = "/opt/arduino-1.6.9"
+" Default: result of `$(ls /dev/tty.* | grep usb)`
+" let g:vim_arduino_serial_port = "/dev/ttyUSB0"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Nim
