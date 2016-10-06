@@ -28,7 +28,7 @@ Plugin 'gmarik/Vundle.vim'
 
 """ YouCompleteMe
 " ./install.py --clang-completer --gocode-completer --tern-completer
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 " Plugin 'Shougo/neocomplete.vim'
 
 Plugin 'scrooloose/syntastic'       " https://github.com/scrooloose/syntastic
@@ -36,11 +36,19 @@ Plugin 'fugitive.vim'               " https://github.com/tpope/vim-fugitive
 Plugin 'mattn/emmet-vim'            " http://mattn.github.io/emmet-vim/
 Plugin 'jiangmiao/auto-pairs'
 
+" Plugin 'FSwitch'
+Plugin 'derekwyatt/vim-fswitch'
+
 Plugin 'majutsushi/tagbar'
 
 """ Go lang
 Plugin 'fatih/vim-go'
 Plugin 'garyburd/go-explorer'
+
+""" PHP
+Plugin 'Shougo/vimproc.vim'
+Plugin 'Shougo/unite.vim'
+Plugin 'm2mdas/phpcomplete-extended'
 
 """ Arduino
 " Plugin 'sudar/vim-arduino-syntax'
@@ -53,13 +61,10 @@ Plugin 'garyburd/go-explorer'
 " Plugin 'repeat.vim'
 " Plugin 'The-NERD-tree'
 " Plugin 'The-NERD-Commenter'
-" Plugin 'FSwitch'
 " Plugin 'terryma/vim-multiple-cursors'
 " Plugin 'SirVer/ultisnips'
 " Plugin 'honza/vim-snippets'
 " Plugin 'junegunn/vim-easy-align'
-" Plugin 'Shougo/vimproc.vim'
-" Plugin 'Shougo/unite.vim'
 " Plugin 'bronson/vim-trailing-whitespace'
 " Plugin 'xolox/vim-misc'
 " Plugin 'Tagbar'
@@ -296,6 +301,9 @@ let g:syntastic_check_on_wq = 0
 
 let vim_markdown_preview_github=1
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" PHP
+autocmd FileType php setlocal omnifunc=phpcomplete_extended#CompletePHP
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 source ~/.vim/keys.vim
@@ -305,4 +313,5 @@ source ~/.vim/rc.arduino.vim
 source ~/.vim/rc.nim.vim
 source ~/.vim/rc.dokuwiki.vim
 source ~/.vim/rc.encodings.vim
+
 
