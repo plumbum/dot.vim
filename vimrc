@@ -5,15 +5,8 @@ set exrc          " Искать .vimrc в текущей директории
 set secure        " Ограничения на .vimrc в директории
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" NeoComplete enable
-let g:neocomplete#enable_at_startup = 1
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vundle
 "
-
-
 filetype off                  " required for Vundle
 
 " set the runtime path to include Vundle and initialize
@@ -59,6 +52,7 @@ if has("gui_running")
     let g:solarized_termcolors=256
     colorscheme lucius
     set guifont=Input\ 10
+    " set guifont=Fira\ Mono\ Regular\ 10
     " set guifont=Liberation\ Mono\ 10
     " set guifont=Droid\ Sans\ Mono\ 10
     " set guifont=Dejavu\ Sans\ Mono\ 10
@@ -217,6 +211,7 @@ let vim_markdown_preview_github=1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 source ~/.vim/keys.vim
+source ~/.vim/rc.neocomplete.vim
 source ~/.vim/rc.go.vim
 source ~/.vim/rc.dokuwiki.vim
 source ~/.vim/rc.encodings.vim
