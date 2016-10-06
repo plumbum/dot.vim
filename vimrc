@@ -5,16 +5,8 @@ set exrc          " Искать .vimrc в текущей директории
 set secure        " Ограничения на .vimrc в директории
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" NeoComplete enable
-let g:neocomplete#enable_at_startup = 1
-
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vundle
 "
-
-
 filetype off                  " required for Vundle
 
 " set the runtime path to include Vundle and initialize
@@ -26,20 +18,23 @@ call vundle#begin()
 """ let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-""" YouCompleteMe
-" ./install.py --clang-completer --gocode-completer --tern-completer
-" Plugin 'Valloric/YouCompleteMe'
-" Plugin 'Shougo/neocomplete.vim'
-
-Plugin 'scrooloose/syntastic'       " https://github.com/scrooloose/syntastic
 Plugin 'fugitive.vim'               " https://github.com/tpope/vim-fugitive
-Plugin 'mattn/emmet-vim'            " http://mattn.github.io/emmet-vim/
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'Konfekt/FastFold'
+Plugin 'repeat.vim'
+Plugin 'surround.vim'
 
 " Plugin 'FSwitch'
 Plugin 'derekwyatt/vim-fswitch'
 
 Plugin 'majutsushi/tagbar'
+Plugin 'The-NERD-Commenter'
+Plugin 'The-NERD-tree'
+Plugin 'scrooloose/syntastic'       " https://github.com/scrooloose/syntastic
+Plugin 'Shougo/neocomplete.vim'
+" ./install.py --clang-completer --gocode-completer --tern-completer
+" Plugin 'Valloric/YouCompleteMe'
+Plugin 'mattn/emmet-vim'            " http://mattn.github.io/emmet-vim/
 
 """ Go lang
 Plugin 'fatih/vim-go'
@@ -51,87 +46,8 @@ Plugin 'Shougo/unite.vim'
 Plugin 'm2mdas/phpcomplete-extended'
 
 """ Arduino
-" Plugin 'sudar/vim-arduino-syntax'
-" Plugin 'tclem/vim-arduino'
-
-" Plugin 'L9'
-" Plugin 'FuzzyFinder'
-" Plugin 'lokaltog/vim-easymotion'    " https://github.com/Lokaltog/vim-easymotion
-" Plugin 'surround.vim'
-" Plugin 'repeat.vim'
-" Plugin 'The-NERD-tree'
-" Plugin 'The-NERD-Commenter'
-" Plugin 'terryma/vim-multiple-cursors'
-" Plugin 'SirVer/ultisnips'
-" Plugin 'honza/vim-snippets'
-" Plugin 'junegunn/vim-easy-align'
-" Plugin 'bronson/vim-trailing-whitespace'
-" Plugin 'xolox/vim-misc'
-" Plugin 'Tagbar'
-" Plugin 'Shougo/neocomplete.vim'
-" Plugin 'Konfekt/FastFold'
-" Plugin 'JamshedVesuna/vim-markdown-preview'
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" Programming language supports
-
-" Plugin 'sheerun/vim-polyglot'
-
-" Plugin 'z3t0/arduvim'
-
-" Plugin 'elzr/vim-json'
-
-""" Go Lang
-" Plugin 'fatih/vim-go'
-" Plugin 'garyburd/go-explorer'
-
-""" Kotlin
-" Plugin 'udalov/kotlin-vim'
-
-""" Nim (http://nim-lang.org/)
-" Plugin 'zah/nimrod.vim'
-
-""" LUA
-" Plugin 'xolox/vim-lua-inspect'
-" Plugin 'xolox/vim-lua-ftplugin'
-" Plugin 'lua_omni'
-
-""" JavaScript
-" Plugin 'pangloss/vim-javascript'
-" Plugin 'jelera/vim-javascript-syntax'
-
-""" Json
-" Plugin 'elzr/vim-json'
-
-""" Haskell
-" Plugin 'yogsototh/haskell-vim'            " syntax indentation / highlight
-" Plugin 'eagletmt/ghcmod-vim'
-" Plugin 'eagletmt/neco-ghc'
-" Plugin 'Twinside/vim-hoogle'
-" Plugin 'pbrisbin/html-template-syntax'    " Yesod templates
-" Plugin 'enomsg/vim-haskellConcealPlus'    " unicode for haskell operators
-
-" Plugin 'OmniCppComplete'
-
-""" NOT USE NOW!!!
-" Plugin 'vim-scripts/squirrel.vim'
-" Plugin 'php.vim'
-" Plugin 'shawncplus/php.vim'
-" Plugin 'shawncplus/phpcomplete.vim'
-" Bundle 'm2mdas/phpcomplete-extended'
-" Plugin 'PHPcollection'
-" Plugin 'vim-scripts/groovy.vim'
-" Plugin 'tfnico/vim-gradle'
-" Plugin 'derekwyatt/vim-scala'
-" Plugin 'tkztmk/vim-vala'
-" Plugin 'itchyny/vim-cursorword'
-" Plugin 'Valloric/YouCompleteMe'
-" Plugin 'SkidanovAlex/CtrlK'
-" Plugin 'syntaxhaskell.vim'
-" Plugin 'indenthaskell.vim'
-" Plugin 'taglist-plus'
-
+Plugin 'sudar/vim-arduino-syntax'
+Plugin 'tclem/vim-arduino'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -146,7 +62,9 @@ if has("gui_running")
     set t_Co=256
     let g:solarized_termcolors=256
     colorscheme lucius
-    set guifont=Liberation\ Mono\ 10
+    set guifont=Input\ 10
+    " set guifont=Fira\ Mono\ Regular\ 10
+    " set guifont=Liberation\ Mono\ 10
     " set guifont=Droid\ Sans\ Mono\ 10
     " set guifont=Dejavu\ Sans\ Mono\ 10
     " set guifont=Inconsolata\ LGC\ 10
@@ -306,11 +224,16 @@ let vim_markdown_preview_github=1
 autocmd FileType php setlocal omnifunc=phpcomplete_extended#CompletePHP
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Arduino
+"Default: /Applications/Arduino.app/Contents/Resources/Java
+let g:vim_arduino_library_path = '/opt/arduino/'
+"Default: result of `$(ls /dev/tty.* | grep usb)`
+let g:vim_arduino_serial_port  = '/dev/ttyUSB0'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 source ~/.vim/keys.vim
-source ~/.vim/rc.haskell.vim
+source ~/.vim/rc.neocomplete.vim
 source ~/.vim/rc.go.vim
-source ~/.vim/rc.arduino.vim
-source ~/.vim/rc.nim.vim
 source ~/.vim/rc.dokuwiki.vim
 source ~/.vim/rc.encodings.vim
 
