@@ -43,7 +43,7 @@ Plugin 'garyburd/go-explorer'
 """ PHP
 Plugin 'Shougo/vimproc.vim'
 Plugin 'Shougo/unite.vim'
-Plugin 'm2mdas/phpcomplete-extended'
+" Plugin 'm2mdas/phpcomplete-extended'
 
 """ Arduino
 Plugin 'sudar/vim-arduino-syntax'
@@ -222,12 +222,21 @@ let vim_markdown_preview_github=1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PHP
 autocmd FileType php setlocal omnifunc=phpcomplete_extended#CompletePHP
+let g:phpcomplete_index_composer_command = 'php /usr/local/bin/composer.phar'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" FastFold
+let g:tex_fold_enabled=1
+let g:vimsyn_folding='af'
+let g:xml_syntax_folding = 1
+let g:php_folding = 1
+let g:perl_fold = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Arduino
-"Default: /Applications/Arduino.app/Contents/Resources/Java
+" Default: /Applications/Arduino.app/Contents/Resources/Java
 let g:vim_arduino_library_path = '/opt/arduino/'
-"Default: result of `$(ls /dev/tty.* | grep usb)`
+" Default: result of `$(ls /dev/tty.* | grep usb)`
 let g:vim_arduino_serial_port  = '/dev/ttyUSB0'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
